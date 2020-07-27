@@ -40,3 +40,7 @@ export function checkMatch () {
 export function showWin () {
   return { type: ACTIONS.SHOW_WIN };
 }
+
+export function showFaces () {
+  return { type: ACTIONS.SHOW_FACES };
+}

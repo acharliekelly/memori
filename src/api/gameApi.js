@@ -51,6 +51,19 @@ export const matchFound = tiles => {
   return items;
 }
 
+/**
+ * return new GameTiles array with all tiles facing up
+ * @param {Array<Object>} tiles 
+ */
+export const showAllFaces = tiles => {
+  const items = Array.from(tiles);
+  items.forEach(item => {
+    item.flipped = true;
+    item.matched = true;
+  });
+  return items;
+}
+
 // TODO: move reducers somewhere (middleware?)
 
 /**
@@ -105,8 +118,9 @@ export const afterSecondFlip = state => {
  * @param {Object} state 
  */
 export const checkWin = state => {
-const { tiles } = state;
-return Object.assign({}, state, {
-  gameOver: tiles.every(tile => tile.matched)
-})
+  const { tiles } = state;
+  return Object.assign({}, state, {
+    gameOver: tiles.every(tile => tile.matched)
+  })
 }
+

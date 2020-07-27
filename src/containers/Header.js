@@ -2,7 +2,8 @@ import { connect } from "react-redux";
 import { 
   changeDeck,
   resizeBoard,
-  restartGame
+  restartGame,
+  showFaces
 } from '../redux/actions/';
 import { initialState } from '../api/boardApi';
 import Header from '../components/Header';
@@ -17,7 +18,8 @@ const mapStateToProps = (state = initialState) => ({
 const actionCreators = {
   updateDeck: changeDeck, 
   updateBoardSize: resizeBoard,
-  restartGame
+  restartGame,
+  showFaces
 };
 
 export default connect(mapStateToProps, actionCreators)(Header);

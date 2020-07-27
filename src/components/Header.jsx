@@ -35,7 +35,7 @@ const DeckSelector = ({ updateDeck }) => (
 
 const Header = props => {
   const { boardSize, currentDeck, moves, matches } = props;
-  const { updateDeck, updateBoardSize, restartGame } = props;
+  const { updateDeck, updateBoardSize, restartGame, showFaces } = props;
   return (
     <Container className="header">
       <h1>Memory Game</h1>
@@ -62,6 +62,8 @@ const Header = props => {
       <Row>
         <Col>
           <Button variant="danger" onClick={restartGame}>New Game</Button>
+          {' '}
+          <Button variant="warning" onClick={showFaces}>Reveal</Button>
         </Col>
         <Col className="moves">
           <span className="label">Moves: </span>

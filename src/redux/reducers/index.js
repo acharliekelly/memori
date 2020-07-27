@@ -8,7 +8,8 @@ import {
 import {
   flip,
   afterSecondFlip,
-  checkWin
+  checkWin,
+  showAllFaces
 } from '../../api/gameApi';
 
   
@@ -51,6 +52,12 @@ const reducer = (state = initialState, action) => {
     case ACTIONS.SHOW_WIN:
       return checkWin(state);
 
+    case ACTIONS.SHOW_FACES:
+      return Object.assign({}, state, {
+        tiles: showAllFaces(state.tiles),
+        secondFlip: false
+      });
+      
     default:
       return state;
   }
