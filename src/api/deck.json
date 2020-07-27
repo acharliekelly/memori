@@ -28,10 +28,12 @@
       "cardBack": "#900",
       "path": "memory/decks/shapes",
       "faces": [
-        "blue-cube.png", "blue-square.png", "cyan-diamond.png", "gold-star.png",
-        "green-blotch.png", "green-triangle.png", "orange-hexagon.png", "pink-square.png",
-        "purple-compass.png", "purple-ring.png", "purple-octagon", "red-circle.png", 
-        "red-heart.png", "red-star.png", "turq-hexagon.png", "yellow-square.png"
+        "blue-cube.png", "cyan-diamond.png", "gold-star.png",
+        "green-blotch.png", "orange-hexagon.png", "purple-compass.png",
+        "red-heart.png", "turq-hexagon.png", 
+        "red-circle.png", "red-star.png", "yellow-square.png",
+        "blue-square.png", "pink-square.png", "green-triangle.png", 
+        "purple-ring.png", "purple-octagon"
       ],
       "showText": false,
       "cardStyle": {
@@ -49,18 +51,18 @@
       "cardBack": "back.jpg",
       "path": "memory/decks/romanov",
       "faces": [
-        "ace-clubs.jpg", "ace-diamonds.jpg", "ace-hearts.jpg", "ace-spades.jpg",
-        "jack-clubs.jpg", "jack-diamonds.jpg", "jack-hearts.jpg", "jack-spades.jpg",
-        "queen-clubs.jpg", "queen-diamonds.jpg", "queen-hearts.jpg", "queen-spades.jpg",
-        "king-clubs.jpg", "king-diamonds.jpg", "king-hearts.jpg", "king-spades.jpg"
+        "ace-hearts.jpg", "ace-spades.jpg", "king-hearts.jpg", "king-spades.jpg",
+        "queen-hearts.jpg", "queen-spades.jpg", "jack-hearts.jpg", "jack-spades.jpg",
+        "ace-clubs.jpg", "ace-diamonds.jpg", "king-clubs.jpg", "king-diamonds.jpg", 
+        "queen-clubs.jpg", "queen-diamonds.jpg", "jack-clubs.jpg", "jack-diamonds.jpg"
       ],
       "showText": false,
       "cardStyle": {
-        "width": "1.9vh",
-        "height": "2.85vh",
+        "width": "3.8rem",
+        "height": "5.7rem",
         "border": "thin solid #2574B6",
         "borderRadius": "0",
-        "margin": "0.5em 1em"
+        "margin": "0.5rem 1rem"
       }
     },
     "tech": {
@@ -87,10 +89,10 @@
       "id": "landscape",
       "title": "Landscapes",
       "hasImages": true,
-      "imgWidth": "60",
-      "background": "#fff",
-      "cardBack": "memore.png",
-      "path": "art/",
+      "imgWidth": "100",
+      "background": "#ccf",
+      "cardBack": "#090",
+      "path": "art",
       "faces": [
         "autumn_woods", "seven_hills_park", "boston-public-gardens-2", "public_garden_swan",
         "memorial_drive", "fall_colors", "herter_birch", "star-island-lighthouse_2015",
@@ -99,8 +101,9 @@
       ],
       "showText": false,
       "cardStyle": {
-        "width": "4vw",
-        "height": "3vw"
+        "width": "8vw",
+        "height": "6vw",
+        "background-color": "#000"
       }
     }
   }
