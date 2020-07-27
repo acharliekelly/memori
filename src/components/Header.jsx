@@ -25,10 +25,10 @@ const DeckSelector = ({ updateDeck }) => (
     <Dropdown.Toggle variant="secondary">Select Deck</Dropdown.Toggle>
     <Dropdown.Menu defaultValue="colors">
       <Dropdown.Item eventKey="colors">Colors</Dropdown.Item>
-      <Dropdown.Item eventKey="gray">Greys</Dropdown.Item>
       <Dropdown.Item eventKey="shapes">Shapes</Dropdown.Item>
       <Dropdown.Item eventKey="romanov">Romanov</Dropdown.Item>
       <Dropdown.Item eventKey="tech">Technologies</Dropdown.Item>
+      <Dropdown.Item eventKey="landscape">Landscapes</Dropdown.Item>
     </Dropdown.Menu>
   </Dropdown>
 );
