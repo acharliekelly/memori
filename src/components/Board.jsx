@@ -14,8 +14,10 @@ const Board = props => {
   const { flipCard, restartGame, startGame, checkMatch, showWin } = props;
   
   useEffect(() => {
-    startGame(deck.id, gridSize);
-  }, [deck.id, gridSize, startGame]);
+    if (tiles.length === 0) {
+      startGame(deck.id, gridSize);
+    }
+  }, [deck.id, tiles.length, gridSize, startGame]);
 
   useEffect(() => {
     if (!isSecondFlip) {

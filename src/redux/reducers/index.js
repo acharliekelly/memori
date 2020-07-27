@@ -17,40 +17,34 @@ const reducer = (state = initialState, action) => {
   switch (action.type) {
 
     case ACTIONS.START_GAME:
+      // use action params
       return initGame(action.deckId, action.gridSize);
 
     case ACTIONS.CHANGE_DECK:
       return Object.assign({}, state, {
-        deckId: action.deckId,
         deck: getDeck(action.deckId)
       });
 
     case ACTIONS.RESIZE_GRID:
-      // automatically resets game
+      // resets game
       return Object.assign({}, state, {
         gridSize: action.gridSize,
-        tiles: initTiles(action.gridSize)
+        tiles: initTiles(action.gridSize),
+        moves: 0,
+        matches: 0,
+        secondFlip: false
       });
 
     case ACTIONS.RESTART_GAME:
+      // use state params
       return initGame(state.deck.id, state.gridSize);
 
     case ACTIONS.FLIP_CARD:
       const items = flip(state, action.index);
-      if (!secondFlip) {
-        // first flip
-        return Object.assign({}, state, {
-          tiles: items,
-          secondFlip: true
-        })
-      } else {
-        // second flip
-        return Object.assign({}, state, {
-          tiles: items,
-          secondFlip: false
-        })
-      }
-
+      return Object.assign({}, state, {
+        tiles: items,
+        secondFlip: !secondFlip
+      });
     case ACTIONS.CHECK_MATCH:
       return afterSecondFlip(state);
 

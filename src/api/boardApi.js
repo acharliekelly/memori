@@ -32,8 +32,7 @@ export const initialState = {
   matches: 0,
   tiles: [],  // { value: int, flipped: bool, matched: bool }
   secondFlip: false,
-  gameOver: false,
-  timer: null
+  gameOver: false
 };
 
 const getNumTiles = gridSize => {
