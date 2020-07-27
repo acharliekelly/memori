@@ -91,7 +91,7 @@ const shuffle = array => {
  * @param {string} gridSize the size of the board, eg '2x2'
  * @returns {GameTile[]}
  */
-export const initTiles = gridSize => {
+export const initTiles = (gridSize = DEFAULT_GRID) => {
   const tileCount = getNumTiles(gridSize);
   const tiles = [];
   for (let i=0; i<tileCount; i++) {
