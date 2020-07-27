@@ -1,0 +1,103 @@
+{
+  "decks": {
+    "gray": {
+      "id": "gray",
+      "title": "Greys",
+      "hasImages": false,
+      "imgWidth": "60",
+      "background": "#000",
+      "cardBack": "#fff",
+      "faces": [
+        "#222", "#333", "#444", "#555", "#666", "#777",
+        "#888", "#999", "#aaa", "#bbb", "#ccc", "#ddd"
+      ],
+      "showText": true,
+      "cardStyle": {
+        "fontSize": "20px",
+        "color": "#fff",
+        "width": "4vw",
+        "height": "4vw"
+      }
+    },
+    "colors": {
+      "id": "colors",
+      "title": "Colors",
+      "hasImages": false,
+      "imgWidth": "60",
+      "background": "#eee",
+      "cardBack": "#000",
+      "faces": [
+        "#600", "#c00", "#060", "#0c0", "#006", "#00c",
+        "#660", "#6c0", "#cc0", "#c60", "#066", "#06c",
+        "#0c6", "#0cc", "#606", "#c0c", "#60c", "#c06"
+      ],
+      "showText": false,
+      "cardStyle": {
+        "fontSize": "16px",
+        "width": "3vw",
+        "height": "3vw"
+      }
+    },
+    "shapes": {
+      "id": "shapes",
+      "title": "Shapes",
+      "hasImages": true,
+      "imgWidth": "60",
+      "background": "#fff",
+      "cardBack": "#900",
+      "faces": [
+        "blue-cube.png", "blue-square.png", "cyan-diamond.png", "gold-star.png",
+        "green-blotch.png", "green-triangle.png", "orange-hexagon.png", "pink-square.png",
+        "purple-compass.png", "purple-ring.png", "purple-octagon", "red-circle.png", 
+        "red-heart.png", "red-star.png", "turq-hexagon.png", "yellow-square.png"
+      ],
+      "showText": false,
+      "cardStyle": {
+        "fontSize": "12px",
+        "width": "4em",
+        "height": "4em"
+      }
+    },
+    "romanov": {
+      "id": "romanov",
+      "title": "Russian",
+      "hasImages": true,
+      "imgWidth": "190",
+      "background": "#2574B6",
+      "cardBack": "back.jpg",
+      "faces": [
+        "ace-clubs.jpg", "ace-diamonds.jpg", "ace-hearts.jpg", "ace-spades.jpg",
+        "jack-clubs.jpg", "jack-diamonds.jpg", "jack-hearts.jpg", "jack-spades.jpg",
+        "queen-clubs.jpg", "queen-diamonds.jpg", "queen-hearts.jpg", "queen-spades.jpg",
+        "king-clubs.jpg", "king-diamonds.jpg", "king-hearts.jpg", "king-spades.jpg"
+      ],
+      "showText": false,
+      "cardStyle": {
+        "width": "190px",
+        "height": "285px",
+        "border": "thin solid #2574B6",
+        "borderRadius": "0",
+        "margin": "5px 10px"
+      }
+    },
+    "tech": {
+      "id": "tech",
+      "title": "Technology",
+      "hasImages": true,
+      "imgWidth": "60",
+      "background": "#fff",
+      "cardBack": "memore.png",
+      "faces": [
+        "bootstrap.png", "css3.png", "firebase.png", "github.png",
+        "grunt.png", "heroku.png", "html5.png", "jest.png",
+        "js.png", "mongodb.png", "node.png", "npm.png",
+        "react.png", "redux.png", "storybook.png", "webpack.png"
+      ],
+      "showText": false,
+      "cardStyle": {
+        "width": "4vw",
+        "height": "4vw"
+      }
+    }
+  }
+}

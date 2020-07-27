@@ -1,0 +1,46 @@
+
+ .game-board {
+  display: grid;
+  grid-gap: 1px;
+  border: 2px ridge #666;
+  border-radius: 1em;
+  padding: 1em;
+
+  .card {
+    font-size: 12px;
+    vertical-align: middle;
+    text-align: center;
+    border: thin outset #333;
+    border-radius: 0.5em;
+    
+    .text {
+      font-weight: bold;
+      color: #000;
+      text-align: center;
+     }
+  }
+
+  .card-front, .card-back {
+    min-width: 3rem;
+    min-height: 3rem;
+    text-align: center;
+    vertical-align: baseline;
+  }
+
+  .card-front {
+    box-shadow: 5px 5px 5px rgba(68, 68, 68, 0.6);
+    cursor: not-allowed;
+  }
+
+  .card-back {
+    // background-color: #666;
+    cursor: pointer;
+  }
+}
+
+.loading {
+  font-size: 20px;
+  font-family: sans-serif;
+  color: black;
+}
+
