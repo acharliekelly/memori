@@ -50,7 +50,7 @@ export const initTiles = gridSize => {
   const tileCount = getNumTiles(gridSize);
   const tiles = [];
   for (let i=0; i<tileCount; i++) {
-    const tile = new GameTile(i);
+    const tile = GameTile(i);
     // add 2 copies of each
     tiles.push(tile, tile);
   }
