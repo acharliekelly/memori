@@ -10,7 +10,6 @@ import { initialState } from '../api/boardApi';
 import Board from '../components/Board';
 
 const mapStateToProps = (state = initialState) => ({
-  deckId: state.deckId,
   deck: state.deck,
   gridSize: state.gridSize,
   tiles: state.tiles,
