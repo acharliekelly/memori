@@ -1,9 +1,13 @@
 import { getCloudImageUrl } from './imageApi';
 import { decks } from './deck.json';
 
+// opacity for matched tiles
+const MATCHED_OPACITY = 0.7;
+
 /**
- * return Deck object
- * @param {Object} deckId 
+ * return Deck
+ * @param {string} deckId
+ * @returns {Deck}
  */
 export const getDeck = deckId => {
   return decks[deckId];
@@ -11,8 +15,9 @@ export const getDeck = deckId => {
 
 /**
  * return image src URL
- * @param {Object} deck 
+ * @param {Deck} deck 
  * @param {int} cardValue 
+ * @returns {URL}
  */
 export const getCloudFace = (deck, cardValue) => {
   const image = deck.faces[cardValue];
@@ -21,7 +26,8 @@ export const getCloudFace = (deck, cardValue) => {
 
 /**
  * return image src URL
- * @param {Object} deck 
+ * @param {Deck} deck 
+ * @returns {URL}
  */
 export const getCloudBack = deck => {
   return getCloudImageUrl(deck.id, deck.cardBack, deck.path, deck.imgWidth);
@@ -29,8 +35,9 @@ export const getCloudBack = deck => {
 
 /**
  * return style object
- * @param {Object} deck 
- * @param {Object} tile 
+ * @param {Deck} deck 
+ * @param {GameTile} tile 
+ * @returns {Object} style
  */
 export const getCardStyle = (deck, tile) => {
   return tile.flipped ?
@@ -39,12 +46,13 @@ export const getCardStyle = (deck, tile) => {
 
 /**
  * return style object
- * @param {Object} deck 
- * @param {Object} tile 
+ * @param {Deck} deck 
+ * @param {GameTile} tile 
+ * @returns {Object} style
  */
 export const getCardFaceStyle = (deck, tile) => {
   const style = Object.assign({}, deck.cardStyle);
-  style.opacity = tile.matched ? 0.7 : 1;
+  style.opacity = tile.matched ? MATCHED_OPACITY : 1;
   
   if (deck.hasImages) {
     // images
@@ -60,7 +68,8 @@ export const getCardFaceStyle = (deck, tile) => {
 
 /**
  * return style object
- * @param {Object} deck 
+ * @param {Deck} deck 
+ * @returns {Object} style 
  */
 export const getCardBackStyle = deck => {
   // show back
