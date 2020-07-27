@@ -34,7 +34,7 @@ export const getCloudBack = deck => {
  */
 export const getCardStyle = (deck, tile) => {
   return tile.flipped ?
-    getCardFrontStyle(deck, tile) : getCardBackStyle(deck);
+    getCardFaceStyle(deck, tile) : getCardBackStyle(deck);
 }
 
 /**
@@ -42,7 +42,7 @@ export const getCardStyle = (deck, tile) => {
  * @param {Object} deck 
  * @param {Object} tile 
  */
-export const getCardFrontStyle = (deck, tile) => {
+export const getCardFaceStyle = (deck, tile) => {
   const style = Object.assign({}, deck.cardStyle);
   style.opacity = tile.matched ? 0.7 : 1;
   
