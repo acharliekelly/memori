@@ -1,24 +1,5 @@
 {
   "decks": {
-    "gray": {
-      "id": "gray",
-      "title": "Greys",
-      "hasImages": false,
-      "imgWidth": "60",
-      "background": "#000",
-      "cardBack": "#fff",
-      "faces": [
-        "#222", "#333", "#444", "#555", "#666", "#777",
-        "#888", "#999", "#aaa", "#bbb", "#ccc", "#ddd"
-      ],
-      "showText": true,
-      "cardStyle": {
-        "fontSize": "20px",
-        "color": "#fff",
-        "width": "4vw",
-        "height": "4vw"
-      }
-    },
     "colors": {
       "id": "colors",
       "title": "Colors",
@@ -27,9 +8,9 @@
       "background": "#eee",
       "cardBack": "#000",
       "faces": [
+        "#0c6", "#0cc", "#606", "#c0c", "#60c", "#c06",
         "#600", "#c00", "#060", "#0c0", "#006", "#00c",
-        "#660", "#6c0", "#cc0", "#c60", "#066", "#06c",
-        "#0c6", "#0cc", "#606", "#c0c", "#60c", "#c06"
+        "#660", "#6c0", "#cc0", "#c60", "#066", "#06c"
       ],
       "showText": false,
       "cardStyle": {
@@ -45,6 +26,7 @@
       "imgWidth": "60",
       "background": "#fff",
       "cardBack": "#900",
+      "path": "memory/decks/shapes",
       "faces": [
         "blue-cube.png", "blue-square.png", "cyan-diamond.png", "gold-star.png",
         "green-blotch.png", "green-triangle.png", "orange-hexagon.png", "pink-square.png",
@@ -62,9 +44,10 @@
       "id": "romanov",
       "title": "Russian",
       "hasImages": true,
-      "imgWidth": "190",
+      "imgWidth": "60",
       "background": "#2574B6",
       "cardBack": "back.jpg",
+      "path": "memory/decks/romanov",
       "faces": [
         "ace-clubs.jpg", "ace-diamonds.jpg", "ace-hearts.jpg", "ace-spades.jpg",
         "jack-clubs.jpg", "jack-diamonds.jpg", "jack-hearts.jpg", "jack-spades.jpg",
@@ -73,11 +56,11 @@
       ],
       "showText": false,
       "cardStyle": {
-        "width": "190px",
-        "height": "285px",
+        "width": "1.9vh",
+        "height": "2.85vh",
         "border": "thin solid #2574B6",
         "borderRadius": "0",
-        "margin": "5px 10px"
+        "margin": "0.5em 1em"
       }
     },
     "tech": {
@@ -87,6 +70,7 @@
       "imgWidth": "60",
       "background": "#fff",
       "cardBack": "memore.png",
+      "path": "memory/decks/tech",
       "faces": [
         "bootstrap.png", "css3.png", "firebase.png", "github.png",
         "grunt.png", "heroku.png", "html5.png", "jest.png",
@@ -97,6 +81,26 @@
       "cardStyle": {
         "width": "4vw",
         "height": "4vw"
+      }
+    },
+    "landscape": {
+      "id": "landscape",
+      "title": "Landscapes",
+      "hasImages": true,
+      "imgWidth": "60",
+      "background": "#fff",
+      "cardBack": "memore.png",
+      "path": "art/",
+      "faces": [
+        "autumn_woods", "seven_hills_park", "boston-public-gardens-2", "public_garden_swan",
+        "memorial_drive", "fall_colors", "herter_birch", "star-island-lighthouse_2015",
+        "cambridge-hyatt", "beaver-brook-north", "footbridge-watertown-dam", "parker_point",
+        "esplanade-sunset_2018", "first_parish", "lake_mansfield", "salt-pond"
+      ],
+      "showText": false,
+      "cardStyle": {
+        "width": "4vw",
+        "height": "3vw"
       }
     }
   }
