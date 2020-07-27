@@ -15,8 +15,8 @@
       "showText": false,
       "cardStyle": {
         "fontSize": "16px",
-        "width": "3vw",
-        "height": "3vw"
+        "width": "3rem",
+        "height": "3rem"
       }
     },
     "shapes": {
