@@ -33,7 +33,7 @@ const reducer = (state = initialState, action) => {
       });
 
     case ACTIONS.RESTART_GAME:
-      return initGame(state.deckId, state.gridSize);
+      return initGame(state.deck.id, state.gridSize);
 
     case ACTIONS.FLIP_CARD:
       const items = flip(state, action.index);
