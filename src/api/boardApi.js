@@ -26,7 +26,7 @@ export const GameTile = (cardVal = 0) => ({
  * The shape of State
  */
 export const initialState = {
-  deck: {},
+  deck: { id: DEFAULT_DECK },
   gridSize: DEFAULT_GRID,
   moves: 0,
   matches: 0,
@@ -36,16 +36,20 @@ export const initialState = {
   timer: null
 };
 
+const getNumTiles = gridSize => {
+  const [boardColumns, boardRows] = GridOptions[gridSize];
+  const boardSize = boardColumns * boardRows;
+  return Math.floor(boardSize / 2);
+};
+
 /**
  * get array of tiles { value: int, flipped: bool, matched: bool }
  * @param {String} gridSize the size of the board, eg '2x2'
  */
 export const initTiles = gridSize => {
-  const [boardColumns, boardRows] = GridOptions[gridSize];
-  const boardSize = boardColumns * boardRows;
-  const values = boardSize / 2;
+  const tileCount = getNumTiles(gridSize);
   const tiles = [];
-  for (let i=0; i<values; i++) {
+  for (let i=0; i<tileCount; i++) {
     const tile = new GameTile(i);
     // add 2 copies of each
     tiles.push(tile, tile);
