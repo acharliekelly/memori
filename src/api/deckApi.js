@@ -16,7 +16,7 @@ export const getDeck = deckId => {
  */
 export const getCloudFace = (deck, cardValue) => {
   const image = deck.faces[cardValue];
-  return getCloudImageUrl(deck.id, image, deck.imgWidth);
+  return getCloudImageUrl(deck.id, image, deck.path, deck.imgWidth);
 }
 
 /**
@@ -24,7 +24,7 @@ export const getCloudFace = (deck, cardValue) => {
  * @param {Object} deck 
  */
 export const getCloudBack = deck => {
-  return getCloudImageUrl(deck.id, deck.cardBack, deck.imgWidth);
+  return getCloudImageUrl(deck.id, deck.cardBack, deck.path, deck.imgWidth);
 }
 
 /**
