@@ -21,15 +21,16 @@
   }
 
   .card-front, .card-back {
-    min-width: 3rem;
-    min-height: 3rem;
+    background-size: contain;
+    background-position-x: center;
+    background-position-y: center;
     text-align: center;
     vertical-align: baseline;
   }
 
   .card-front {
     box-shadow: 5px 5px 5px rgba(68, 68, 68, 0.6);
-    cursor: not-allowed;
+    cursor: default;
   }
 
   .card-back {
