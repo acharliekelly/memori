@@ -7,23 +7,21 @@ import GameOver from './GameOver';
 import '../css/grid.scss';
 import '../css/board.scss';
 
-const CHECK_MATCH_TIMER = 1500;
+// const CHECK_MATCH_TIMER = 1500;
 
 const Board = props => {
   const { deck, tiles, isGameOver, gridSize, isSecondFlip, matches } = props;
   const { flipCard, restartGame, startGame, checkMatch, showWin } = props;
-
+  
   useEffect(() => {
     startGame(deck.id, gridSize);
-  });
+  }, [deck.id, gridSize, startGame]);
 
   useEffect(() => {
     if (!isSecondFlip) {
       // second card has been flipped
-      const timerHandle = setInterval(() => {
-        checkMatch();
-      }, CHECK_MATCH_TIMER);
-      return clearInterval(timerHandle);
+      checkMatch();
+      
     }
   }, [isSecondFlip, checkMatch]);
 
@@ -31,7 +29,9 @@ const Board = props => {
     if (matches === tiles.length / 2) {
       showWin();
     }
-  }, [matches, tiles.length, showWin])
+  }, [matches, tiles.length, showWin]);
+
+  
 
   const boardCls = `game-board grid-${gridSize} ${deck.id}`;
   const boardStyle = { backgroundColor: deck.background };
