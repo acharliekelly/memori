@@ -1,5 +1,6 @@
 {
   "name": "memori",
+  "homepage": "https://acharliekelly.github.io/memori",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
