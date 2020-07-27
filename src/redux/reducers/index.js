@@ -1,9 +1,9 @@
 import * as ACTIONS from '../actions/actionTypes';
+import { getDeck } from '../../api/deckApi';
 import { 
   initTiles,
   initialState,
-  initGame,
-  getDeck
+  initGame
 } from '../../api/boardApi';
 import {
   flip,
