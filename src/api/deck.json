@@ -81,8 +81,8 @@
       ],
       "showText": false,
       "cardStyle": {
-        "width": "4vw",
-        "height": "4vw"
+        "width": "4rem",
+        "height": "4rem"
       }
     },
     "landscape": {
@@ -103,7 +103,7 @@
       "cardStyle": {
         "width": "8vw",
         "height": "6vw",
-        "background-color": "#000"
+        "backgroundColor": "#000"
       }
     }
   }
