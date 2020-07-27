@@ -13,6 +13,10 @@ export const getDeck = deckId => {
   return decks[deckId];
 }
 
+const defaultDeckStyle = ({
+  backgroundColor: '#f00'
+});
+
 /**
  * return image src URL
  * @param {Deck} deck 
@@ -51,9 +55,12 @@ export const getCardStyle = (deck, tile) => {
  * @returns {Object} style
  */
 export const getCardFaceStyle = (deck, tile) => {
+  // first check if deck is hydrated
+  if (!deck.title) return defaultDeckStyle;
+
   const style = Object.assign({}, deck.cardStyle);
   style.opacity = tile.matched ? MATCHED_OPACITY : 1;
-  
+
   if (deck.hasImages) {
     // images
     const img = getCloudFace(deck, tile.value);
@@ -72,8 +79,11 @@ export const getCardFaceStyle = (deck, tile) => {
  * @returns {Object} style 
  */
 export const getCardBackStyle = deck => {
-  // show back
+  // first check if deck is hydrated
+  if (!deck.title) return defaultDeckStyle;
+
   const style = Object.assign({}, deck.cardStyle);
+
   if (deck.cardBack.startsWith('#')) {
     style.backgroundColor = deck.cardBack;
   } else {
