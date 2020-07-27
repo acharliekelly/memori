@@ -7,7 +7,7 @@ import GameOver from './GameOver';
 import '../css/grid.scss';
 import '../css/board.scss';
 
-// const CHECK_MATCH_TIMER = 1500;
+const CHECK_MATCH_TIMER = 1500;
 
 const Board = props => {
   const { deck, tiles, isGameOver, gridSize, isSecondFlip, matches } = props;
@@ -20,8 +20,7 @@ const Board = props => {
   useEffect(() => {
     if (!isSecondFlip) {
       // second card has been flipped
-      checkMatch();
-      
+      setTimeout(checkMatch, CHECK_MATCH_TIMER);
     }
   }, [isSecondFlip, checkMatch]);
 
