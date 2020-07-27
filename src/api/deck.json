@@ -28,12 +28,12 @@
       "cardBack": "#900",
       "path": "memory/decks/shapes",
       "faces": [
-        "blue-cube.png", "cyan-diamond.png", "gold-star.png",
+        "blue-cube.png",  "gold-star.png", "purple-octagon",
         "green-blotch.png", "orange-hexagon.png", "purple-compass.png",
         "red-heart.png", "turq-hexagon.png", 
         "red-circle.png", "red-star.png", "yellow-square.png",
         "blue-square.png", "pink-square.png", "green-triangle.png", 
-        "purple-ring.png", "purple-octagon"
+        "purple-ring.png",  "cyan-diamond.png"
       ],
       "showText": false,
       "cardStyle": {
@@ -67,7 +67,7 @@
     },
     "tech": {
       "id": "tech",
-      "title": "Technology",
+      "title": "Logos",
       "hasImages": true,
       "imgWidth": "60",
       "background": "#fff",
