@@ -10,6 +10,7 @@ const cloudUri = `https://res.cloudinary.com/${CLOUD_NAME}/`;
  * @param {String} imageId cloudinary file name (w/o dir)
  * @param {String} path cloudinary directory
  * @param {int} width image width (px)
+ * @returns {URL}
  */
 export const getCloudImageUrl = (deckId, imageId, path, width = 60) => {
   return `${cloudUri}/w_${width}/${path}/${imageId}`;

@@ -1,9 +1,12 @@
 
-import { getDeck } from './deckApi';
 
 export const DEFAULT_DECK = 'colors';
 export const DEFAULT_GRID = '4x4';
 
+/**
+ * Available board sizes
+ * @returns {Object<string,[int,int]>}
+ */
 export const GridOptions = {
   '2x2': [2,2],
   '2x4': [2,4],
@@ -15,26 +18,52 @@ export const GridOptions = {
 };
 
 
-
+/**
+ * Tile state
+ * @param {int} cardVal card value
+ * @returns {Object<int,bool,bool>}
+ */
 export const GameTile = (cardVal = 0) => ({
   value: cardVal,
   flipped: false,
   matched: false
 });
 
-/**
- * The shape of State
- */
-export const initialState = {
-  deck: { id: DEFAULT_DECK },
-  gridSize: DEFAULT_GRID,
-  moves: 0,
-  matches: 0,
-  tiles: [],  // { value: int, flipped: bool, matched: bool }
-  secondFlip: false,
-  gameOver: false
-};
 
+/**
+ * get flipped tiles
+ * @param {GameTile[]} tiles 
+ * @returns {GameTile[]}
+ */
+export const flipped = tiles => {
+  return tiles.filter(tile => tile.flipped && !tile.matched);
+}
+/**
+ * return true if exactly 2 tiles are flipped
+ * @param {GameTile[]} tiles
+ * @returns {boolean}
+ */
+export const isSecondFlip = tiles => {
+  return (flipped(tiles).length === 2);
+}
+
+/**
+ * return true if exactly 2 tiles are flipped, and match
+ * @param {GameTile[]} tiles array of objects {0, false, false}
+ * @returns {boolean}
+ */
+export const isMatched = tiles => {
+  const flippedTiles = flipped(tiles);
+  return (flippedTiles.length === 2 
+    && flippedTiles[0].value === flippedTiles[1].value);
+}
+
+
+/**
+ * 
+ * @param {string} gridSize 
+ * @returns {int} number of tiles
+ */
 const getNumTiles = gridSize => {
   const [boardColumns, boardRows] = GridOptions[gridSize];
   const boardSize = boardColumns * boardRows;
@@ -42,21 +71,10 @@ const getNumTiles = gridSize => {
 };
 
 /**
- * get array of tiles { value: int, flipped: bool, matched: bool }
- * @param {String} gridSize the size of the board, eg '2x2'
+ * 
+ * @param {GameTile[]} array
+ * @returns {GameTile[]}
  */
-export const initTiles = gridSize => {
-  const tileCount = getNumTiles(gridSize);
-  const tiles = [];
-  for (let i=0; i<tileCount; i++) {
-    const tile = GameTile(i);
-    // add 2 copies of each
-    tiles.push(tile, tile);
-  }
-  return shuffle(tiles);
-}
-
-// Pure
 const shuffle = array => {
   const newArray = Array.from(array);
   for (let i = newArray.length - 1; i > 0; i--) {
@@ -68,10 +86,22 @@ const shuffle = array => {
   return newArray;
 }
 
-export const initGame = (deckId = DEFAULT_DECK, gridSize = DEFAULT_GRID) => {
-  return Object.assign({}, initialState, {
-    tiles: initTiles(gridSize),
-    deck: getDeck(deckId)
-  })
+/**
+ * get array of tiles
+ * @param {string} gridSize the size of the board, eg '2x2'
+ * @returns {GameTile[]}
+ */
+export const initTiles = (gridSize = DEFAULT_GRID) => {
+  const tileCount = getNumTiles(gridSize);
+  const tiles = [];
+  for (let i=0; i<tileCount; i++) {
+    const tile = GameTile(i);
+    // add 2 copies of each
+    tiles.push(tile, tile);
+  }
+  return shuffle(tiles);
 }
+
+
+
 

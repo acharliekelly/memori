@@ -26,8 +26,8 @@ const DeckSelector = ({ updateDeck }) => (
     <Dropdown.Menu defaultValue="colors">
       <Dropdown.Item eventKey="colors">Colors</Dropdown.Item>
       <Dropdown.Item eventKey="shapes">Shapes</Dropdown.Item>
-      <Dropdown.Item eventKey="romanov">Romanov</Dropdown.Item>
-      <Dropdown.Item eventKey="tech">Technologies</Dropdown.Item>
+      <Dropdown.Item eventKey="romanov">Russian</Dropdown.Item>
+      <Dropdown.Item eventKey="tech">Logos</Dropdown.Item>
       <Dropdown.Item eventKey="landscape">Landscapes</Dropdown.Item>
     </Dropdown.Menu>
   </Dropdown>
@@ -36,6 +36,7 @@ const DeckSelector = ({ updateDeck }) => (
 const Header = props => {
   const { boardSize, currentDeck, moves, matches } = props;
   const { updateDeck, updateBoardSize, restartGame, showFaces } = props;
+  const deckTitle = currentDeck ? currentDeck.title : 'None';
   return (
     <Container className="header">
       <h1>Memory Game</h1>
@@ -56,7 +57,7 @@ const Header = props => {
         <Col />
         <Col className="deck">
           <span className="label">Deck: </span>
-          <span className="current-value">{currentDeck.title}</span>
+          <span className="current-value">{deckTitle}</span>
         </Col>
       </Row>
       <Row>

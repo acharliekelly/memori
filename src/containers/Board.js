@@ -6,10 +6,10 @@ import {
   checkMatch,
   showWin
 } from '../redux/actions';
-import { initialState } from '../api/boardApi';
+import { INITIAL_STATE } from '../redux/reducers/';
 import Board from '../components/Board';
 
-const mapStateToProps = (state = initialState) => ({
+const mapStateToProps = (state = INITIAL_STATE) => ({
   deck: state.deck,
   gridSize: state.gridSize,
   tiles: state.tiles,

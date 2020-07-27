@@ -3,6 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Spinner from 'react-bootstrap/Spinner';
 import Tile from './Tile';
 import GameOver from './GameOver';
+import { DEFAULT_DECK, DEFAULT_GRID } from '../api/boardApi';
 
 import '../css/grid.scss';
 import '../css/board.scss';
@@ -14,10 +15,14 @@ const Board = props => {
   const { flipCard, restartGame, startGame, checkMatch, showWin } = props;
   
   useEffect(() => {
-    if (tiles.length === 0) {
-      startGame(deck.id, gridSize);
+    const deckId = deck ? deck.id : DEFAULT_DECK;
+    const size = gridSize || DEFAULT_GRID;
+    
+    if (!tiles || tiles.length === 0) {
+      console.log(`No tiles! starting game with deck "${deckId}" and grid "${size}"`)
+      startGame(deckId, size);
     }
-  }, [deck.id, tiles.length, gridSize, startGame]);
+  }, [deck, tiles, gridSize, startGame]);
 
   useEffect(() => {
     if (!isSecondFlip) {
@@ -27,17 +32,17 @@ const Board = props => {
   }, [isSecondFlip, checkMatch]);
 
   useEffect(() => {
-    if (matches === tiles.length / 2) {
+    if (tiles && matches === tiles.length / 2) {
       showWin();
     }
-  }, [matches, tiles.length, showWin]);
+  }, [matches, tiles, showWin]);
 
   
 
-  const boardCls = `game-board grid-${gridSize} ${deck.id}`;
-  const boardStyle = { backgroundColor: deck.background };
+  const boardCls = `game-board grid-${gridSize}`;
+  const boardStyle = { backgroundColor: deck ? deck.background : '#fff' };
   if (!tiles) {
-    return <Spinner animation="grow" variant="warning" />
+    return <Spinner style={{ marginLeft: "3rem", marginTop: "2rem" }} animation="grow" variant="danger" />
   } else {
     return (
       <Container fluid="xl" className={boardCls} style={boardStyle}>

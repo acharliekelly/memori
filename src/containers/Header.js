@@ -5,10 +5,10 @@ import {
   restartGame,
   showFaces
 } from '../redux/actions/';
-import { initialState } from '../api/boardApi';
+import { INITIAL_STATE } from '../redux/reducers/';
 import Header from '../components/Header';
 
-const mapStateToProps = (state = initialState) => ({
+const mapStateToProps = (state = INITIAL_STATE) => ({
   boardSize: state.gridSize,
   currentDeck: state.deck,
   moves: state.moves,
