@@ -21,7 +21,11 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "make-standard": "eslint --fix .",
+    "nag": "eslint .",
+    "deploy": "sh scripts/deploy.sh"
+
   },
   "eslintConfig": {
     "extends": "react-app"
