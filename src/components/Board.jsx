@@ -10,11 +10,11 @@ import '../css/board.scss';
 const CHECK_MATCH_TIMER = 1500;
 
 const Board = props => {
-  const { deckId, deck, tiles, isGameOver, gridSize, isSecondFlip, matches } = props;
-  const { flipTile, restartGame, startGame, checkMatch, showWin } = props;
+  const { deck, tiles, isGameOver, gridSize, isSecondFlip, matches } = props;
+  const { flipCard, restartGame, startGame, checkMatch, showWin } = props;
 
   useEffect(() => {
-    startGame(deckId, gridSize);
+    startGame(deck.id, gridSize);
   });
 
   useEffect(() => {
@@ -44,7 +44,7 @@ const Board = props => {
           <GameOver restartGame={restartGame} />
         )}
         {tiles.map((tile, index) => (
-          <Tile key={index} index={index} tile={tile} flipCard={flipTile} deck={deck} />
+          <Tile key={index} index={index} tile={tile} flipCard={flipCard} deck={deck} />
         ))}
       </Container>
     )

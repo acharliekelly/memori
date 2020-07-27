@@ -21,7 +21,7 @@ const mapStateToProps = (state = initialState) => ({
 
 const actionCreators = {
   restartGame,
-  flipTile: flipCard,
+  flipCard,
   startGame,
   checkMatch,
   showWin
